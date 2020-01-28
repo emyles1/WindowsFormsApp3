@@ -47,34 +47,38 @@
             // lblUserName
             // 
             this.lblUserName.AutoSize = true;
-            this.lblUserName.Location = new System.Drawing.Point(36, 39);
+            this.lblUserName.Location = new System.Drawing.Point(48, 48);
+            this.lblUserName.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblUserName.Name = "lblUserName";
-            this.lblUserName.Size = new System.Drawing.Size(60, 13);
+            this.lblUserName.Size = new System.Drawing.Size(79, 17);
             this.lblUserName.TabIndex = 0;
             this.lblUserName.Text = "User Name";
             // 
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.Location = new System.Drawing.Point(36, 62);
+            this.lblPassword.Location = new System.Drawing.Point(48, 76);
+            this.lblPassword.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(53, 13);
+            this.lblPassword.Size = new System.Drawing.Size(69, 17);
             this.lblPassword.TabIndex = 1;
             this.lblPassword.Text = "Password";
             // 
             // txtUName
             // 
-            this.txtUName.Location = new System.Drawing.Point(111, 36);
+            this.txtUName.Location = new System.Drawing.Point(148, 44);
+            this.txtUName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtUName.Name = "txtUName";
-            this.txtUName.Size = new System.Drawing.Size(122, 20);
+            this.txtUName.Size = new System.Drawing.Size(161, 22);
             this.txtUName.TabIndex = 2;
             this.txtUName.Text = "Username";
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(177, 86);
+            this.btnLogin.Location = new System.Drawing.Point(236, 106);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(56, 23);
+            this.btnLogin.Size = new System.Drawing.Size(75, 28);
             this.btnLogin.TabIndex = 4;
             this.btnLogin.Text = "Login";
             this.btnLogin.UseVisualStyleBackColor = true;
@@ -82,9 +86,10 @@
             // 
             // btnExit
             // 
-            this.btnExit.Location = new System.Drawing.Point(177, 115);
+            this.btnExit.Location = new System.Drawing.Point(236, 142);
+            this.btnExit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(56, 23);
+            this.btnExit.Size = new System.Drawing.Size(75, 28);
             this.btnExit.TabIndex = 5;
             this.btnExit.Text = "Exit";
             this.btnExit.UseVisualStyleBackColor = true;
@@ -92,16 +97,18 @@
             // 
             // txtPass
             // 
-            this.txtPass.Location = new System.Drawing.Point(111, 62);
+            this.txtPass.Location = new System.Drawing.Point(148, 76);
+            this.txtPass.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtPass.Name = "txtPass";
-            this.txtPass.Size = new System.Drawing.Size(122, 20);
-            this.txtPass.TabIndex = 6;
+            this.txtPass.Size = new System.Drawing.Size(161, 22);
+            this.txtPass.TabIndex = 3;
             // 
             // btnNewStudent
             // 
-            this.btnNewStudent.Location = new System.Drawing.Point(18, 29);
+            this.btnNewStudent.Location = new System.Drawing.Point(24, 36);
+            this.btnNewStudent.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnNewStudent.Name = "btnNewStudent";
-            this.btnNewStudent.Size = new System.Drawing.Size(102, 23);
+            this.btnNewStudent.Size = new System.Drawing.Size(136, 28);
             this.btnNewStudent.TabIndex = 8;
             this.btnNewStudent.Text = "Add new student";
             this.btnNewStudent.UseVisualStyleBackColor = true;
@@ -109,9 +116,10 @@
             // 
             // btnEditStudent
             // 
-            this.btnEditStudent.Location = new System.Drawing.Point(18, 64);
+            this.btnEditStudent.Location = new System.Drawing.Point(24, 79);
+            this.btnEditStudent.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnEditStudent.Name = "btnEditStudent";
-            this.btnEditStudent.Size = new System.Drawing.Size(102, 23);
+            this.btnEditStudent.Size = new System.Drawing.Size(136, 28);
             this.btnEditStudent.TabIndex = 9;
             this.btnEditStudent.Text = "Edit Student";
             this.btnEditStudent.UseVisualStyleBackColor = true;
@@ -119,9 +127,10 @@
             // 
             // btnDelete
             // 
-            this.btnDelete.Location = new System.Drawing.Point(18, 108);
+            this.btnDelete.Location = new System.Drawing.Point(24, 133);
+            this.btnDelete.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(102, 23);
+            this.btnDelete.Size = new System.Drawing.Size(136, 28);
             this.btnDelete.TabIndex = 10;
             this.btnDelete.Text = "Delete Student";
             this.btnDelete.UseVisualStyleBackColor = true;
@@ -129,9 +138,10 @@
             // 
             // btnDataHis
             // 
-            this.btnDataHis.Location = new System.Drawing.Point(18, 148);
+            this.btnDataHis.Location = new System.Drawing.Point(24, 182);
+            this.btnDataHis.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnDataHis.Name = "btnDataHis";
-            this.btnDataHis.Size = new System.Drawing.Size(102, 35);
+            this.btnDataHis.Size = new System.Drawing.Size(136, 43);
             this.btnDataHis.TabIndex = 11;
             this.btnDataHis.Text = "View Database History";
             this.btnDataHis.UseVisualStyleBackColor = true;
@@ -143,9 +153,11 @@
             this.groupBox1.Controls.Add(this.btnDataHis);
             this.groupBox1.Controls.Add(this.btnEditStudent);
             this.groupBox1.Controls.Add(this.btnDelete);
-            this.groupBox1.Location = new System.Drawing.Point(553, 86);
+            this.groupBox1.Location = new System.Drawing.Point(737, 106);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(126, 200);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Size = new System.Drawing.Size(168, 246);
             this.groupBox1.TabIndex = 12;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "groupBox1";
@@ -153,16 +165,17 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(39, 150);
+            this.dataGridView1.Location = new System.Drawing.Point(52, 185);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(426, 149);
+            this.dataGridView1.Size = new System.Drawing.Size(568, 183);
             this.dataGridView1.TabIndex = 12;
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(1067, 554);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txtPass);
@@ -171,6 +184,7 @@
             this.Controls.Add(this.txtUName);
             this.Controls.Add(this.lblPassword);
             this.Controls.Add(this.lblUserName);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "Login";
             this.Text = "Login";
             this.groupBox1.ResumeLayout(false);
