@@ -79,6 +79,48 @@ namespace WindowsFormsApp3
         {
             new AddStudent().ShowDialog();
         }
+
+        private void btnRefresh_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                //sql connection object
+               // using (SqlConnection conn = new SqlConnection(conn))
+                {
+
+                    //retrieve the SQL Server instance version
+                    string query = @"SELECT * FROM Student;";
+
+                    //define the SqlCommand object
+                    SqlCommand cmd = new SqlCommand(query, conn);
+
+
+                    //Set the SqlDataAdapter object
+                    SqlDataAdapter dAdapter = new SqlDataAdapter(cmd);
+
+                    //define dataset
+                    DataSet ds = new DataSet();
+
+                    //fill dataset with query results
+                    dAdapter.Fill(ds);
+
+                    //set DataGridView control to read-only
+                    dataGridView1.ReadOnly = true;
+
+                    //set the DataGridView control's data source/data table
+                    dataGridView1.DataSource = ds.Tables[0];
+
+
+                    //close connection
+                    conn.Close();
+                }
+            }
+            catch (Exception ex)
+            {
+                //display error message
+                MessageBox.Show("Exception: " + ex.Message);
+            }
+        }
     }
 }
     

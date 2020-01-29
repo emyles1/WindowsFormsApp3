@@ -19,7 +19,7 @@ namespace WindowsFormsApp3
             //Application.Run(new Form1());
             Application.Run(new Login());
             
-            //Application.Run(new AddStudent());
+           // Application.Run(new AddStudent());
             
         }
     }

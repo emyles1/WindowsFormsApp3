@@ -28,15 +28,15 @@ namespace WindowsFormsApp3
             {
                 conn.Open();
                 MessageBox.Show("Connected");
-                 SqlCommand cmd = new SqlCommand("CREATE TABLE FirstName(" +
-                     "ID INT PRIMARY KEY, Name VARCHAR(20));",conn);
+                 SqlCommand cmd = new SqlCommand("CREATE TABLE Student(" +
+                     "ID INT PRIMARY KEY, FirstName VARCHAR(20), Surname VARCHAR(20), Email VARCHAR(20), Phone  VARCHAR(10), AddressL1 VARCHAR (50), AddressL2 VARCHAR (50), City VARCHAR (20), County (20), Level INT );", conn);
                  cmd.ExecuteNonQuery();
-                 cmd = new SqlCommand("CREATE TABLE Surname(" +
+                 /*cmd = new SqlCommand("CREATE TABLE Surname(" +
                      "ID INT PRIMARY KEY, Surname VARCHAR(20));", conn);
                  cmd.ExecuteNonQuery();
                  cmd = new SqlCommand("CREATE TABLE Admin(" +
                     "ID INT PRIMARY KEY, Pass VARCHAR(20));", conn);
-                cmd.ExecuteNonQuery();
+                */cmd.ExecuteNonQuery();
                 /* cmd = new SqlCommand("CREATE TABLE Product(" +
                     "ID INT PRIMARY KEY, Name VARCHAR(20), Price INT);", conn);
                  cmd.ExecuteNonQuery();
@@ -96,8 +96,28 @@ namespace WindowsFormsApp3
 
         private void btnAddAdmin_Click(object sender, EventArgs e)
         {
+            try
+            {
+                conn.Open();
+                MessageBox.Show("Connected");
 
-            new AddAdminForm(conn).ShowDialog();
+                SqlCommand cmd = new SqlCommand("ALTER TABLE FirstName(" +
+                     "ID INT PRIMARY KEY, Name VARCHAR(20));", conn);
+                cmd.ExecuteNonQuery();
+                
+            }
+
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
+            //new AddAdminForm(conn).ShowDialog();
         }
     }
 }

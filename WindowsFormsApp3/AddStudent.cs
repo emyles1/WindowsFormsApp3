@@ -4,6 +4,8 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Configuration;
+using System.Data.SqlClient;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,10 +14,14 @@ namespace WindowsFormsApp3
 {
     public partial class AddStudent : Form
     {
+        SqlConnection conn;
         public AddStudent()
         {
             InitializeComponent();
+            conn = new SqlConnection(ConfigurationManager.ConnectionStrings["orderline"].ConnectionString);
+
         }
+
 
         private void AddStudent_Load(object sender, EventArgs e)
         {
@@ -87,6 +93,39 @@ namespace WindowsFormsApp3
          
 
             //  }
+
+        }
+
+        private void btnSubmit_Click(object sender, EventArgs e)
+        {
+
+            try
+            {
+                SqlCommand cmd = new SqlCommand("INSERT INTO Student " +
+                    "VALUES(@ID,@FirstName, @Surname,@Email,@Phone,@AddressL1,@AddressL2,@City,@County,@Level)", conn);
+                cmd.Parameters.AddWithValue("@ID", DBStudNo.Text);
+                cmd.Parameters.AddWithValue("@FirstName", DBFirstName.Text);
+                cmd.Parameters.AddWithValue("@Surname", DBSurname.Text);
+                cmd.Parameters.AddWithValue("@Email", DBEmail.Text);
+                cmd.Parameters.AddWithValue("@Phone", DBPhone.Text);
+                cmd.Parameters.AddWithValue("@AddressL1", DBAddress1.Text);
+                cmd.Parameters.AddWithValue("@AddressL2", DBAddress2.Text);
+                cmd.Parameters.AddWithValue("@City", DBCity.Text);
+                cmd.Parameters.AddWithValue("@County", DBCounty.Text);
+                cmd.Parameters.AddWithValue("@Level", DBLevel.Text);
+
+
+
+                if (conn.State == ConnectionState.Closed
+                    || conn.State == ConnectionState.Broken)
+                    conn.Open();
+                cmd.ExecuteNonQuery();
+                MessageBox.Show("Added");
+            }
+            finally
+            {
+                conn.Close();
+            }
 
         }
     }
