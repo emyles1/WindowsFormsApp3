@@ -72,7 +72,6 @@
             this.txtUName.Name = "txtUName";
             this.txtUName.Size = new System.Drawing.Size(161, 22);
             this.txtUName.TabIndex = 2;
-            this.txtUName.Text = "Username";
             // 
             // btnLogin
             // 
@@ -101,6 +100,7 @@
             this.txtPass.Location = new System.Drawing.Point(148, 76);
             this.txtPass.Margin = new System.Windows.Forms.Padding(4);
             this.txtPass.Name = "txtPass";
+            this.txtPass.PasswordChar = '*';
             this.txtPass.Size = new System.Drawing.Size(161, 22);
             this.txtPass.TabIndex = 3;
             // 
