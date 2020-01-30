@@ -12,10 +12,10 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp3
 {
-    public partial class Form1 : Form
+    public partial class btnCreateAdminDB : Form
     {
         SqlConnection conn;
-        public Form1()
+        public btnCreateAdminDB()
         {
             InitializeComponent();
             conn = new SqlConnection(ConfigurationManager.ConnectionStrings["orderline"].ConnectionString);
@@ -100,11 +100,9 @@ namespace WindowsFormsApp3
             {
                 conn.Open();
                 MessageBox.Show("Connected");
-
-                SqlCommand cmd = new SqlCommand("ALTER TABLE FirstName(" +
-                     "ID INT PRIMARY KEY, Name VARCHAR(20));", conn);
+                SqlCommand cmd = new SqlCommand("CREATE TABLE Admin(" +
+                    "ID INT PRIMARY KEY, Username VARCHAR(20), Password VARCHAR(20));", conn);
                 cmd.ExecuteNonQuery();
-                
             }
 
 
@@ -118,6 +116,28 @@ namespace WindowsFormsApp3
             }
 
             //new AddAdminForm(conn).ShowDialog();
+        }
+
+        private void btnAdminCreateDB_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                conn.Open();
+                MessageBox.Show("Connected");
+                SqlCommand cmd = new SqlCommand("CREATE TABLE Admin(" +
+                    "ID int IDENTITY(1,1), Username VARCHAR(20), Password VARCHAR(20));", conn);
+                cmd.ExecuteNonQuery();
+            }
+
+
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
         }
     }
 }
