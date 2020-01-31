@@ -30,8 +30,8 @@ namespace WindowsFormsApp3
 
         private void rbAddStudent_CheckedChanged(object sender, EventArgs e)
         {
-      
-                RadioButton radioBtn = this.Controls.OfType<RadioButton>().Where(x => x.Checked).First();
+            DBStudNo.Visible = false;
+            RadioButton radioBtn = this.Controls.OfType<RadioButton>().Where(x => x.Checked).First();
             
                // if (radioBtn.Enabled == true)
                
@@ -102,7 +102,7 @@ namespace WindowsFormsApp3
             try
             {
                 SqlCommand cmd = new SqlCommand("INSERT INTO Student " +
-                    "VALUES(@ID,@FirstName, @Surname,@Email,@Phone,@AddressL1,@AddressL2,@City,@County,@Level)", conn);
+                    "VALUES(@FirstName, @Surname,@Email,@Phone,@AddressL1,@AddressL2,@City,@County,@Level)", conn);
                 cmd.Parameters.AddWithValue("@ID", DBStudNo.Text);
                 cmd.Parameters.AddWithValue("@FirstName", DBFirstName.Text);
                 cmd.Parameters.AddWithValue("@Surname", DBSurname.Text);
@@ -112,7 +112,7 @@ namespace WindowsFormsApp3
                 cmd.Parameters.AddWithValue("@AddressL2", DBAddress2.Text);
                 cmd.Parameters.AddWithValue("@City", DBCity.Text);
                 cmd.Parameters.AddWithValue("@County", DBCounty.Text);
-                cmd.Parameters.AddWithValue("@Level", DBLevel.Text);
+                cmd.Parameters.AddWithValue("@Level", comboxLevel.SelectedItem);
 
 
 
