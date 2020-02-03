@@ -96,6 +96,7 @@
             this.rbEditStudent.TabStop = true;
             this.rbEditStudent.Text = "Edit Student";
             this.rbEditStudent.UseVisualStyleBackColor = true;
+            this.rbEditStudent.CheckedChanged += new System.EventHandler(this.rbEditStudent_CheckedChanged);
             // 
             // rbDeleteStudent
             // 
@@ -107,6 +108,7 @@
             this.rbDeleteStudent.TabStop = true;
             this.rbDeleteStudent.Text = "Delete Student";
             this.rbDeleteStudent.UseVisualStyleBackColor = true;
+            this.rbDeleteStudent.CheckedChanged += new System.EventHandler(this.rbDeleteStudent_CheckedChanged);
             // 
             // btnSubmit
             // 
