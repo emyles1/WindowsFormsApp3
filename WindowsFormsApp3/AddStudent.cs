@@ -15,11 +15,12 @@ namespace WindowsFormsApp3
     public partial class AddStudent : Form
     {
         SqlConnection conn;
+        Labels labelradio = new Labels();
         public AddStudent()
         {
             InitializeComponent();
             conn = new SqlConnection(ConfigurationManager.ConnectionStrings["orderline"].ConnectionString);
-
+          
         }
 
 
@@ -42,10 +43,9 @@ namespace WindowsFormsApp3
                         label8.Text = "Add County";
                         label9.Text = "Add Level";
                         label10.Text = "Add Course";
-                 
 
+          
         }
-
         private void rbEditStudent_CheckedChanged(object sender, EventArgs e)
         {
             label1.Text = "Edit First Name";
@@ -58,6 +58,9 @@ namespace WindowsFormsApp3
             label8.Text = "Edit County";
             label9.Text = "Edit Level";
             label10.Text = "Edit Course";
+
+            labelradio = new Labels("Eamon", "Surname", "Email", "Phone", "123 Fakestreet");
+            MessageBox.Show(labelradio.Firstname);
         }
 
         private void rbDeleteStudent_CheckedChanged(object sender, EventArgs e)
@@ -108,8 +111,9 @@ namespace WindowsFormsApp3
 
         }
 
- 
-
-        
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }
