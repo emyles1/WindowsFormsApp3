@@ -85,7 +85,7 @@ namespace WindowsFormsApp3
             {
                 SqlCommand cmd = new SqlCommand("INSERT INTO Student " +
                     "VALUES(@FirstName, @Surname,@Email,@Phone,@AddressL1,@AddressL2,@City,@County,@Level)", conn);
-                cmd.Parameters.AddWithValue("@ID", DBStudNo.Text);
+                //cmd.Parameters.AddWithValue("@ID", DBStudNo.Text);
                 cmd.Parameters.AddWithValue("@FirstName", DBFirstName.Text);
                 cmd.Parameters.AddWithValue("@Surname", DBSurname.Text);
                 cmd.Parameters.AddWithValue("@Email", DBEmail.Text);

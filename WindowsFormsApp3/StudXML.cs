@@ -4,6 +4,8 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Configuration;
+using System.Data.SqlClient;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -12,9 +14,11 @@ namespace WindowsFormsApp3
 {
     public partial class StudXML : Form
     {
+        SqlConnection conn;
         public StudXML()
         {
             InitializeComponent();
+            conn = new SqlConnection(ConfigurationManager.ConnectionStrings["orderline"].ConnectionString);
         }
 
         private void btnBack_Click(object sender, EventArgs e)
@@ -42,6 +46,11 @@ namespace WindowsFormsApp3
             {
                 conn.Close();
             }
+
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
 
         }
     }

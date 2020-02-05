@@ -51,8 +51,6 @@
             this.DBCity = new System.Windows.Forms.TextBox();
             this.DBCounty = new System.Windows.Forms.TextBox();
             this.DBCourse = new System.Windows.Forms.TextBox();
-            this.DBStudNo = new System.Windows.Forms.TextBox();
-            this.label11 = new System.Windows.Forms.Label();
             this.comboxLevel = new System.Windows.Forms.ComboBox();
             this.btnBack = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -127,7 +125,6 @@
             this.DBSurname.Name = "DBSurname";
             this.DBSurname.Size = new System.Drawing.Size(100, 20);
             this.DBSurname.TabIndex = 13;
-            this.DBSurname.Text = "Surname";
             // 
             // DBFirstName
             // 
@@ -135,7 +132,6 @@
             this.DBFirstName.Name = "DBFirstName";
             this.DBFirstName.Size = new System.Drawing.Size(100, 20);
             this.DBFirstName.TabIndex = 12;
-            this.DBFirstName.Text = "First Name";
             // 
             // label3
             // 
@@ -215,7 +211,6 @@
             this.DBEmail.Name = "DBEmail";
             this.DBEmail.Size = new System.Drawing.Size(100, 20);
             this.DBEmail.TabIndex = 14;
-            this.DBEmail.Text = "Email";
             // 
             // DBPhone
             // 
@@ -223,7 +218,6 @@
             this.DBPhone.Name = "DBPhone";
             this.DBPhone.Size = new System.Drawing.Size(100, 20);
             this.DBPhone.TabIndex = 15;
-            this.DBPhone.Text = "Phone";
             // 
             // DBAddress1
             // 
@@ -231,7 +225,6 @@
             this.DBAddress1.Name = "DBAddress1";
             this.DBAddress1.Size = new System.Drawing.Size(100, 20);
             this.DBAddress1.TabIndex = 16;
-            this.DBAddress1.Text = "Address Line 1";
             // 
             // DBAddress2
             // 
@@ -239,7 +232,6 @@
             this.DBAddress2.Name = "DBAddress2";
             this.DBAddress2.Size = new System.Drawing.Size(100, 20);
             this.DBAddress2.TabIndex = 17;
-            this.DBAddress2.Text = "Address Line 2";
             // 
             // DBCity
             // 
@@ -247,7 +239,6 @@
             this.DBCity.Name = "DBCity";
             this.DBCity.Size = new System.Drawing.Size(100, 20);
             this.DBCity.TabIndex = 18;
-            this.DBCity.Text = "City";
             // 
             // DBCounty
             // 
@@ -255,7 +246,6 @@
             this.DBCounty.Name = "DBCounty";
             this.DBCounty.Size = new System.Drawing.Size(100, 20);
             this.DBCounty.TabIndex = 19;
-            this.DBCounty.Text = "County";
             // 
             // DBCourse
             // 
@@ -263,24 +253,6 @@
             this.DBCourse.Name = "DBCourse";
             this.DBCourse.Size = new System.Drawing.Size(100, 20);
             this.DBCourse.TabIndex = 21;
-            this.DBCourse.Text = "Course";
-            // 
-            // DBStudNo
-            // 
-            this.DBStudNo.Location = new System.Drawing.Point(497, 247);
-            this.DBStudNo.Name = "DBStudNo";
-            this.DBStudNo.Size = new System.Drawing.Size(100, 20);
-            this.DBStudNo.TabIndex = 24;
-            this.DBStudNo.Text = "Student No.";
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(359, 254);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(41, 13);
-            this.label11.TabIndex = 11;
-            this.label11.Text = "label11";
             // 
             // comboxLevel
             // 
@@ -311,8 +283,6 @@
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.comboxLevel);
-            this.Controls.Add(this.DBStudNo);
-            this.Controls.Add(this.label11);
             this.Controls.Add(this.DBCourse);
             this.Controls.Add(this.DBCity);
             this.Controls.Add(this.DBCounty);
@@ -369,8 +339,6 @@
         private System.Windows.Forms.TextBox DBCity;
         private System.Windows.Forms.TextBox DBCounty;
         private System.Windows.Forms.TextBox DBCourse;
-        private System.Windows.Forms.TextBox DBStudNo;
-        private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ComboBox comboxLevel;
         private System.Windows.Forms.Button btnBack;
     }

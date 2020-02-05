@@ -34,24 +34,33 @@ namespace WindowsFormsApp3
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            string username = txtUName.Text;
-            string password = txtPass.Text;
+            //string username = txtUName.Text;
+            //string password = txtPass.Text;
 
-            
-               /* SqlCommand cmd = new SqlCommand("Select FROM Admin " +
-                  "VALUES(@ID,@Name)", conn);
-                cmd.Parameters.AddWithValue("@ID", txtPass.Text);
-                cmd.Parameters.AddWithValue("@Name", txtUName.Text);
 
-                if (conn.State == ConnectionState.Closed
-                    || conn.State == ConnectionState.Broken)
-                    conn.Open();
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Added");*/
-  
+
+            try
+            {
+                conn.Open();
+                MessageBox.Show("Connected");
+                SqlCommand cmd = new SqlCommand("SELECT Password FROM Admin where Username = Admin ;", conn);
+                SqlDataReader rdr = cmd.ExecuteReader();
+                /*while (rdr.Read())
+                    MessageBox.Show("Name: " + rdr[1] + "; ID: " +
+                        rdr["ID"]);*/
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+            finally
+            {
+                conn.Close();
+            }
+
             if ((this.txtUName.Text == "Admin") && (this.txtPass.Text == "Admin"))
             {
-                MessageBox.Show("Access Granted");
+                
                 groupBox1.Visible = true;
             }
             else

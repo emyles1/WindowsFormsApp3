@@ -1,9 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
+using System.Configuration;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -36,7 +36,7 @@ namespace WindowsFormsApp3
                  cmd.ExecuteNonQuery();
                  cmd = new SqlCommand("CREATE TABLE Admin(" +
                     "ID INT PRIMARY KEY, Pass VARCHAR(20));", conn);
-                */cmd.ExecuteNonQuery();
+                //cmd.ExecuteNonQuery();
                 /* cmd = new SqlCommand("CREATE TABLE Product(" +
                     "ID INT PRIMARY KEY, Name VARCHAR(20), Price INT);", conn);
                  cmd.ExecuteNonQuery();
@@ -100,11 +100,17 @@ namespace WindowsFormsApp3
             {
                 conn.Open();
                 MessageBox.Show("Connected");
-                SqlCommand cmd = new SqlCommand("CREATE TABLE Admin(" +
-                    "ID INT PRIMARY KEY, Username VARCHAR(20), Password VARCHAR(20));", conn);
-                cmd.ExecuteNonQuery();
-            }
 
+
+                SqlCommand cmd = new SqlCommand("INSERT INTO Admin " +
+                    "VALUES(@Username,@Password)", conn);
+                //cmd.Parameters.AddWithValue("@ID", 1);
+                cmd.Parameters.AddWithValue("@Username", "Admin");
+                cmd.Parameters.AddWithValue("@Password", "Admin");
+               
+                cmd.ExecuteNonQuery();
+
+            }
 
             catch (Exception ex)
             {
