@@ -15,6 +15,7 @@ namespace WindowsFormsApp3
     public partial class Login : Form
     {
         SqlConnection conn;
+        string rdr;
         public Login()
         {
             //Look at this implementation between Form 1 and AddCustomerForm. Guessing that this needs to be only initalized once then passed to the rest
@@ -23,6 +24,7 @@ namespace WindowsFormsApp3
             conn = new SqlConnection(ConfigurationManager.ConnectionStrings["orderline"].ConnectionString);
             //this.conn = conn;
 
+            btnRefresh.Visible = false;
             dataGridView1.Visible = false;
             groupBox1.Visible = false;
         }
@@ -34,34 +36,43 @@ namespace WindowsFormsApp3
 
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            //string username = txtUName.Text;
+           
+            string username = txtUName.Text;
             //string password = txtPass.Text;
-
-
 
             try
             {
                 conn.Open();
-                MessageBox.Show("Connected");
-                SqlCommand cmd = new SqlCommand("SELECT Password FROM Admin where Username = Admin ;", conn);
-                SqlDataReader rdr = cmd.ExecuteReader();
-                /*while (rdr.Read())
-                    MessageBox.Show("Name: " + rdr[1] + "; ID: " +
-                        rdr["ID"]);*/
+                /* MessageBox.Show("Connected");
+                 SqlCommand cmd = new SqlCommand("SELECT password FROM Admin where Username = " +
+                     "VALUES(@username)", conn);
+                 cmd.Parameters.AddWithValue("@username", txtUName.Text);
+                 string rdr = (string)cmd.ExecuteScalar();
+                 MessageBox.Show("Name: " + rdr);*/
+
+                SqlCommand cmd = new SqlCommand();
+
+                cmd.CommandText = "SELECT Password FROM Admin where Username = '"+ username +"'";
+                cmd.Connection = conn;
+                rdr = (string)cmd.ExecuteScalar();
+                MessageBox.Show("Name: " + rdr);
+
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error: " + ex.Message);
+                
             }
             finally
             {
                 conn.Close();
             }
 
-            if ((this.txtUName.Text == "Admin") && (this.txtPass.Text == "Admin"))
+            if ((this.txtUName.Text == "Admin") && (rdr == "Admin"))
             {
                 
                 groupBox1.Visible = true;
+                
             }
             else
             {
@@ -72,6 +83,7 @@ namespace WindowsFormsApp3
         private void btnDataHis_Click(object sender, EventArgs e)
         {
             dataGridView1.Visible = true;
+            btnRefresh.Visible = true;
         }
 
         private void btnNewStudent_Click(object sender, EventArgs e)
