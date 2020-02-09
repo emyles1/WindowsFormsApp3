@@ -1,12 +1,4 @@
 ﻿using System;
-<<<<<<< HEAD
-
-public class Class1
-{
-	public Class1()
-	{
-	}
-=======
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,15 +10,15 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApp3
 {
-    public partial class Game : Form
+    public partial class xml : Form
     {
         private DataSet ds;
-        public Game()
+        public xml()
         {
             InitializeComponent();
         }
 
-        private void btnAdd_Click(object sender, EventArgs e)
+        private void btnAdd_Click_Click(object sender, EventArgs e)
         {
             DataTable dt;
             if (ds == null)
@@ -45,24 +37,24 @@ namespace WindowsFormsApp3
             row["Title"] = txtTitle.Text;
             row["Year"] = txtYear.Text;
             row["Description"] = txtDesc.Text;
-            txtID.Clear(); txtDesc.Clear(); txtTitle.Clear(); txtYear.Clear();
+            txtID.Clear(); txtTitle.Clear();
             dt.Rows.Add(row);
             dt.AcceptChanges();
             output.Text = "Record Created";
             output.Visible = true;
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
+        private void btnSave_Click_Click(object sender, EventArgs e)
         {
-            if (txtFN.Text == "")
+            if(txtFN.Text =="")
             {
                 txtFN.Text = "Games.xml";
             }
-            ds.WriteXml(txtFN.Text);
+            ds.WriteXml(txtFN.text);
             output.Text = "Saved";
         }
 
-        private void btnLoad_Click(object sender, EventArgs e)
+        private void btnLoad_Click_Click(object sender, EventArgs e)
         {
             if (ds == null)
             {
@@ -76,16 +68,17 @@ namespace WindowsFormsApp3
             ds.ReadXml(fileN, XmlReadMode.InferSchema);
             if (!ds.Tables.Contains("Game")) throw new Exception();
         }
-        private void btnView_Click(object sender, EventArgs e)
+
+        private void btnView_Click_Click(object sender, EventArgs e)
         {
-            if (ds == null || txtID.Text == "")
+            if (ds == null || txtID.Text=="")
             {
                 MessageBox.Show("Not Loaded or Selected");
             }
             else
             {
-                DataTable dt = ds.Tables["Game"];
-                string expr = string.Format("StockID={0}", txtID.Text);
+                DataTable ds = ds.Tables["Game"];
+                string expr = string.Format("StockID={0}, textID.Text");
                 DataRow[] r = dt.Select(expr);
                 txtID.Text = (string)r[0]["StockID"];
                 txtDesc.Text = (string)r[0]["Description"];
@@ -94,5 +87,4 @@ namespace WindowsFormsApp3
             }
         }
     }
->>>>>>> 03b448acc5fcb2d6ff1d5a5fc3221d8e4563f1c0
 }
