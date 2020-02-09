@@ -121,6 +121,11 @@ namespace WindowsFormsApp3
                 MessageBox.Show("Exception: " + ex.Message);
             }
         }
+
+        private void btnXmlStud_Click(object sender, EventArgs e)
+        {
+            new StudXML().ShowDialog();
+        }
     }
 }
     

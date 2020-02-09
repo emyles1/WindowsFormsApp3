@@ -50,10 +50,11 @@
             this.DBAddress2 = new System.Windows.Forms.TextBox();
             this.DBCity = new System.Windows.Forms.TextBox();
             this.DBCounty = new System.Windows.Forms.TextBox();
-            this.DBLevel = new System.Windows.Forms.TextBox();
             this.DBCourse = new System.Windows.Forms.TextBox();
-            this.DBStudNo = new System.Windows.Forms.TextBox();
+            this.comboxLevel = new System.Windows.Forms.ComboBox();
+            this.btnBack = new System.Windows.Forms.Button();
             this.label11 = new System.Windows.Forms.Label();
+            this.DBStudNo = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // label1
@@ -100,6 +101,7 @@
             this.rbEditStudent.TabStop = true;
             this.rbEditStudent.Text = "Edit Student";
             this.rbEditStudent.UseVisualStyleBackColor = true;
+            this.rbEditStudent.CheckedChanged += new System.EventHandler(this.rbEditStudent_CheckedChanged);
             // 
             // rbDeleteStudent
             // 
@@ -112,6 +114,7 @@
             this.rbDeleteStudent.TabStop = true;
             this.rbDeleteStudent.Text = "Delete Student";
             this.rbDeleteStudent.UseVisualStyleBackColor = true;
+            this.rbDeleteStudent.CheckedChanged += new System.EventHandler(this.rbDeleteStudent_CheckedChanged);
             // 
             // btnSubmit
             // 
@@ -119,7 +122,7 @@
             this.btnSubmit.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnSubmit.Name = "btnSubmit";
             this.btnSubmit.Size = new System.Drawing.Size(100, 28);
-            this.btnSubmit.TabIndex = 5;
+            this.btnSubmit.TabIndex = 22;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
@@ -130,7 +133,7 @@
             this.DBSurname.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DBSurname.Name = "DBSurname";
             this.DBSurname.Size = new System.Drawing.Size(132, 22);
-            this.DBSurname.TabIndex = 6;
+            this.DBSurname.TabIndex = 13;
             this.DBSurname.Text = "Surname";
             // 
             // DBFirstName
@@ -139,7 +142,7 @@
             this.DBFirstName.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DBFirstName.Name = "DBFirstName";
             this.DBFirstName.Size = new System.Drawing.Size(132, 22);
-            this.DBFirstName.TabIndex = 7;
+            this.DBFirstName.TabIndex = 12;
             this.DBFirstName.Text = "First Name";
             // 
             // label3
@@ -149,7 +152,7 @@
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(46, 17);
-            this.label3.TabIndex = 8;
+            this.label3.TabIndex = 3;
             this.label3.Text = "label3";
             // 
             // label4
@@ -159,7 +162,7 @@
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(46, 17);
-            this.label4.TabIndex = 9;
+            this.label4.TabIndex = 4;
             this.label4.Text = "label4";
             // 
             // label5
@@ -169,7 +172,7 @@
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(46, 17);
-            this.label5.TabIndex = 10;
+            this.label5.TabIndex = 5;
             this.label5.Text = "label5";
             // 
             // label6
@@ -179,7 +182,7 @@
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(46, 17);
-            this.label6.TabIndex = 11;
+            this.label6.TabIndex = 6;
             this.label6.Text = "label6";
             // 
             // label7
@@ -189,7 +192,7 @@
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(46, 17);
-            this.label7.TabIndex = 12;
+            this.label7.TabIndex = 7;
             this.label7.Text = "label7";
             // 
             // label8
@@ -199,7 +202,7 @@
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(46, 17);
-            this.label8.TabIndex = 13;
+            this.label8.TabIndex = 8;
             this.label8.Text = "label8";
             // 
             // label9
@@ -209,7 +212,7 @@
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(46, 17);
-            this.label9.TabIndex = 14;
+            this.label9.TabIndex = 9;
             this.label9.Text = "label9";
             // 
             // label10
@@ -219,7 +222,7 @@
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(54, 17);
-            this.label10.TabIndex = 15;
+            this.label10.TabIndex = 10;
             this.label10.Text = "label10";
             // 
             // DBEmail
@@ -228,7 +231,7 @@
             this.DBEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DBEmail.Name = "DBEmail";
             this.DBEmail.Size = new System.Drawing.Size(132, 22);
-            this.DBEmail.TabIndex = 17;
+            this.DBEmail.TabIndex = 14;
             this.DBEmail.Text = "Email";
             // 
             // DBPhone
@@ -237,7 +240,7 @@
             this.DBPhone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DBPhone.Name = "DBPhone";
             this.DBPhone.Size = new System.Drawing.Size(132, 22);
-            this.DBPhone.TabIndex = 16;
+            this.DBPhone.TabIndex = 15;
             this.DBPhone.Text = "Phone";
             // 
             // DBAddress1
@@ -246,7 +249,7 @@
             this.DBAddress1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DBAddress1.Name = "DBAddress1";
             this.DBAddress1.Size = new System.Drawing.Size(132, 22);
-            this.DBAddress1.TabIndex = 19;
+            this.DBAddress1.TabIndex = 16;
             this.DBAddress1.Text = "Address Line 1";
             // 
             // DBAddress2
@@ -255,7 +258,7 @@
             this.DBAddress2.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DBAddress2.Name = "DBAddress2";
             this.DBAddress2.Size = new System.Drawing.Size(132, 22);
-            this.DBAddress2.TabIndex = 18;
+            this.DBAddress2.TabIndex = 17;
             this.DBAddress2.Text = "Address Line 2";
             // 
             // DBCity
@@ -264,7 +267,7 @@
             this.DBCity.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DBCity.Name = "DBCity";
             this.DBCity.Size = new System.Drawing.Size(132, 22);
-            this.DBCity.TabIndex = 21;
+            this.DBCity.TabIndex = 18;
             this.DBCity.Text = "City";
             // 
             // DBCounty
@@ -273,17 +276,8 @@
             this.DBCounty.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DBCounty.Name = "DBCounty";
             this.DBCounty.Size = new System.Drawing.Size(132, 22);
-            this.DBCounty.TabIndex = 20;
+            this.DBCounty.TabIndex = 19;
             this.DBCounty.Text = "County";
-            // 
-            // DBLevel
-            // 
-            this.DBLevel.Location = new System.Drawing.Point(663, 210);
-            this.DBLevel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.DBLevel.Name = "DBLevel";
-            this.DBLevel.Size = new System.Drawing.Size(132, 22);
-            this.DBLevel.TabIndex = 23;
-            this.DBLevel.Text = "Level";
             // 
             // DBCourse
             // 
@@ -291,17 +285,32 @@
             this.DBCourse.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.DBCourse.Name = "DBCourse";
             this.DBCourse.Size = new System.Drawing.Size(132, 22);
-            this.DBCourse.TabIndex = 22;
+            this.DBCourse.TabIndex = 21;
             this.DBCourse.Text = "Course";
             // 
-            // DBStudNo
+            // comboxLevel
             // 
-            this.DBStudNo.Location = new System.Drawing.Point(663, 304);
-            this.DBStudNo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.DBStudNo.Name = "DBStudNo";
-            this.DBStudNo.Size = new System.Drawing.Size(132, 22);
-            this.DBStudNo.TabIndex = 25;
-            this.DBStudNo.Text = "Student No.";
+            this.comboxLevel.FormattingEnabled = true;
+            this.comboxLevel.Items.AddRange(new object[] {
+            "6",
+            "7",
+            "8"});
+            this.comboxLevel.Location = new System.Drawing.Point(663, 207);
+            this.comboxLevel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.comboxLevel.Name = "comboxLevel";
+            this.comboxLevel.Size = new System.Drawing.Size(132, 24);
+            this.comboxLevel.TabIndex = 20;
+            // 
+            // btnBack
+            // 
+            this.btnBack.Location = new System.Drawing.Point(59, 17);
+            this.btnBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(100, 28);
+            this.btnBack.TabIndex = 25;
+            this.btnBack.Text = "< Back";
+            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // label11
             // 
@@ -310,17 +319,27 @@
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(54, 17);
-            this.label11.TabIndex = 24;
+            this.label11.TabIndex = 11;
             this.label11.Text = "label11";
+            // 
+            // DBStudNo
+            // 
+            this.DBStudNo.Location = new System.Drawing.Point(663, 304);
+            this.DBStudNo.Margin = new System.Windows.Forms.Padding(4);
+            this.DBStudNo.Name = "DBStudNo";
+            this.DBStudNo.Size = new System.Drawing.Size(132, 22);
+            this.DBStudNo.TabIndex = 24;
+            this.DBStudNo.Text = "Student No.";
             // 
             // AddStudent
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.Controls.Add(this.btnBack);
+            this.Controls.Add(this.comboxLevel);
             this.Controls.Add(this.DBStudNo);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.DBLevel);
             this.Controls.Add(this.DBCourse);
             this.Controls.Add(this.DBCity);
             this.Controls.Add(this.DBCounty);
@@ -377,9 +396,10 @@
         private System.Windows.Forms.TextBox DBAddress2;
         private System.Windows.Forms.TextBox DBCity;
         private System.Windows.Forms.TextBox DBCounty;
-        private System.Windows.Forms.TextBox DBLevel;
         private System.Windows.Forms.TextBox DBCourse;
-        private System.Windows.Forms.TextBox DBStudNo;
+        private System.Windows.Forms.ComboBox comboxLevel;
+        private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox DBStudNo;
     }
 }
