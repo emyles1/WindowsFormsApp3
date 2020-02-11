@@ -47,41 +47,104 @@ namespace WindowsFormsApp3
 
         private void rbDeleteStudent_CheckedChanged(object sender, EventArgs e)
         {
-
+            //lets start this today
             labelValue(3);
          
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
         {
+            string ID;
 
-            try
+            if (rbAddStudent.Checked)
             {
-                SqlCommand cmd = new SqlCommand("INSERT INTO Student " +
-                    "VALUES(@FirstName, @Surname,@Email,@Phone,@AddressL1,@AddressL2,@City,@County,@Level)", conn);
-                //cmd.Parameters.AddWithValue("@ID", DBStudNo.Text);
-                cmd.Parameters.AddWithValue("@FirstName", DBFirstName.Text);
-                cmd.Parameters.AddWithValue("@Surname", DBSurname.Text);
-                cmd.Parameters.AddWithValue("@Email", DBEmail.Text);
-                cmd.Parameters.AddWithValue("@Phone", DBPhone.Text);
-                cmd.Parameters.AddWithValue("@AddressL1", DBAddress1.Text);
-                cmd.Parameters.AddWithValue("@AddressL2", DBAddress2.Text);
-                cmd.Parameters.AddWithValue("@City", DBCity.Text);
-                cmd.Parameters.AddWithValue("@County", DBCounty.Text);
-                cmd.Parameters.AddWithValue("@Level", comboxLevel.SelectedItem);
 
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("INSERT INTO Student " +
+                        "VALUES(@FirstName, @Surname,@Email,@Phone,@AddressL1,@AddressL2,@City,@County,@Level,@Course)", conn);
+                    //cmd.Parameters.AddWithValue("@ID", DBStudNo.Text);
+                    cmd.Parameters.AddWithValue("@FirstName", DBFirstName.Text);
+                    cmd.Parameters.AddWithValue("@Surname", DBSurname.Text);
+                    cmd.Parameters.AddWithValue("@Email", DBEmail.Text);
+                    cmd.Parameters.AddWithValue("@Phone", DBPhone.Text);
+                    cmd.Parameters.AddWithValue("@AddressL1", DBAddress1.Text);
+                    cmd.Parameters.AddWithValue("@AddressL2", DBAddress2.Text);
+                    cmd.Parameters.AddWithValue("@City", DBCity.Text);
+                    cmd.Parameters.AddWithValue("@County", DBCounty.Text);
+                    cmd.Parameters.AddWithValue("@Level", comboxLevel.SelectedItem);
+                    cmd.Parameters.AddWithValue("@Course", DBCourse.Text);
 
-
-                if (conn.State == ConnectionState.Closed
-                    || conn.State == ConnectionState.Broken)
-                    conn.Open();
-                cmd.ExecuteNonQuery();
-                MessageBox.Show("Added");
+                    if (conn.State == ConnectionState.Closed
+                        || conn.State == ConnectionState.Broken)
+                        conn.Open();
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Added");
+                }
+                finally
+                {
+                    conn.Close();
+                }
             }
-            finally
+            else if(rbEditStudent.Checked)
             {
-                conn.Close();
+               
+                try
+                {
+                    string cmdText = "UPDATE Student SET Firstname = " +
+                        "@FirstName, Surname = @Surname, Email = @Email, " +
+                        "Phone = @Phone, AddressL1 = @AddressL1, " +
+                        "AddressL2 = @AddressL2, City = @City, County = @County, " +
+                        "Course = @Course, Level = @Level "
+                        + "Where ID = @ID";
+                    SqlCommand cmd = new SqlCommand(cmdText, conn);
+                    cmd.Parameters.AddWithValue("@ID", txtStudID.Text);
+                    cmd.Parameters.AddWithValue("@FirstName", DBFirstName.Text);
+                    cmd.Parameters.AddWithValue("@Surname", DBSurname.Text);
+                    cmd.Parameters.AddWithValue("@Email", DBEmail.Text);
+                    cmd.Parameters.AddWithValue("@Phone", DBPhone.Text);
+                    cmd.Parameters.AddWithValue("@AddressL1", DBAddress1.Text);
+                    cmd.Parameters.AddWithValue("@AddressL2", DBAddress2.Text);
+                    cmd.Parameters.AddWithValue("@City", DBCity.Text);
+                    cmd.Parameters.AddWithValue("@County", DBCounty.Text);
+                    cmd.Parameters.AddWithValue("@Level", comboxLevel.SelectedItem);
+                    cmd.Parameters.AddWithValue("@Course", DBCourse.Text);
+
+                    if (conn.State == ConnectionState.Closed
+                        || conn.State == ConnectionState.Broken)
+                        conn.Open();
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Added");
+                }
+                finally
+                {
+                    conn.Close();
+                }
             }
+
+            else if(rbDeleteStudent.Checked)
+            {
+                ID = txtStudID.Text;
+                try
+                {
+                    SqlCommand cmd = new SqlCommand("Delete from Student where id=@ID", conn);
+                    cmd.Parameters.AddWithValue("@ID", ID);
+
+
+                    if (conn.State == ConnectionState.Closed
+                        || conn.State == ConnectionState.Broken)
+                        conn.Open();
+                    cmd.ExecuteNonQuery();
+                    MessageBox.Show("Deleted");
+                }
+                finally
+                {
+                    conn.Close();
+                }
+
+                clear();
+            }
+
 
         }
 
@@ -89,6 +152,70 @@ namespace WindowsFormsApp3
         {
             this.Close();
         }
+
+
+        private void btnLoadStd_Click(object sender, EventArgs e)
+        {
+
+            string ID = txtStudID.Text;
+
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("Select * from Student where id=@ID", conn);
+            cmd.Parameters.AddWithValue("@ID", ID);
+            using (SqlDataReader reader = cmd.ExecuteReader())
+            {
+                if(reader.Read())
+                {
+
+                    DBFirstName.Text = reader["FirstName"].ToString();
+                    DBSurname.Text = reader["Surname"].ToString();
+                    DBEmail.Text = reader["Email"].ToString();
+                    DBPhone.Text = reader["Phone"].ToString();
+                    DBAddress1.Text = reader["AddressL1"].ToString();
+                    DBAddress2.Text = reader["AddressL2"].ToString();
+                    DBCity.Text = reader["City"].ToString();
+                    DBCounty.Text = reader["County"].ToString();
+                    comboxLevel.Text = reader["level"].ToString();
+                    DBCourse.Text = reader["Course"].ToString();
+                    
+                    //MessageBox.Show("test" + reader["FirstName"]);
+                }
+            }
+            conn.Close();
+
+
+            if (rbEditStudent.Checked && txtStudID.Text != null)
+            {
+                DBAddress1.Enabled = true;
+                DBFirstName.Enabled = true;
+                DBSurname.Enabled = true;
+                DBEmail.Enabled = true;
+                DBPhone.Enabled = true;
+                DBAddress2.Enabled = true;
+                DBCity.Enabled = true;
+                DBCounty.Enabled = true;
+                DBCourse.Enabled = true;
+                comboxLevel.Enabled = true;
+                txtStudID.Enabled = false;
+            }
+        }
+
+
+        public void clear()
+        {
+            DBFirstName.Clear();
+            DBSurname.Clear();
+            DBEmail.Clear();
+            DBPhone.Clear();
+            DBAddress1.Clear();
+            DBAddress2.Clear();
+            DBCity.Clear();
+            DBCounty.Clear();
+            DBCourse.Clear();
+            txtStudID.Clear();
+
+        }
+
 
         public void labelValue(int value)
         {
@@ -141,7 +268,6 @@ namespace WindowsFormsApp3
                 label8.Text = "Add County";
                 label9.Text = "Add Level";
                 label10.Text = "Add Course";
-            
 
                 DBAddress1.Enabled = true;
                 DBFirstName.Enabled = true;
@@ -156,21 +282,21 @@ namespace WindowsFormsApp3
             }
 
             else if (value == 3)
-                    {
+            {
                 txtStudID.Visible = true;
                 btnLoadStd.Visible = true;
                 label11.Visible = true;
 
-                label1.Text = "Edit First Name";
-                label2.Text = "Edit Surname";
-                label3.Text = "Edit Email";
-                label4.Text = "Edit Phone";
-                label5.Text = "Edit Address Line 1";
-                label6.Text = "Edit Address Line 2";
-                label7.Text = "Edit City";
-                label8.Text = "Edit County";
-                label9.Text = "Edit Level";
-                label10.Text = "Edit Course";
+                label1.Text = "Delete First Name";
+                label2.Text = "Delete Surname";
+                label3.Text = "Delete Email";
+                label4.Text = "Delete Phone";
+                label5.Text = "Delete Address Line 1";
+                label6.Text = "Delete Address Line 2";
+                label7.Text = "Delete City";
+                label8.Text = "Delete County";
+                label9.Text = "Delete Level";
+                label10.Text = "Delete Course";
                 label11.Text = "Load Student ID";
 
                 DBAddress1.Enabled = false;
@@ -184,16 +310,6 @@ namespace WindowsFormsApp3
                 DBCourse.Enabled = false;
                 comboxLevel.Enabled = false;
             }
-                    
-                
-
-           
-
-
-        }
-
-        private void btnLoadStd_Click(object sender, EventArgs e)
-        {
 
         }
     }

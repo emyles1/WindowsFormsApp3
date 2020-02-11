@@ -29,7 +29,7 @@ namespace WindowsFormsApp3
                 conn.Open();
                 MessageBox.Show("Connected");
                  SqlCommand cmd = new SqlCommand("CREATE TABLE Student(" +
-                     "ID int IDENTITY(1,1) PRIMARY KEY, FirstName VARCHAR(20), Surname VARCHAR(20), Email VARCHAR(20), Phone  VARCHAR(10), AddressL1 VARCHAR (50), AddressL2 VARCHAR (50), City VARCHAR (20), County VARCHAR (20), Level INT );", conn);
+                     "ID int IDENTITY(1,1) PRIMARY KEY, FirstName VARCHAR(20), Surname VARCHAR(20), Email VARCHAR(20), Phone  VARCHAR(10), AddressL1 VARCHAR (50), AddressL2 VARCHAR (50), City VARCHAR (20), County VARCHAR (20), Level INT, Course VARCHAR (50) );", conn);
                  cmd.ExecuteNonQuery();
                  /*cmd = new SqlCommand("CREATE TABLE Surname(" +
                      "ID INT PRIMARY KEY, Surname VARCHAR(20));", conn);
