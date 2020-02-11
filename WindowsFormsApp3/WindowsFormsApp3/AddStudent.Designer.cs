@@ -53,33 +53,31 @@
             this.DBCourse = new System.Windows.Forms.TextBox();
             this.comboxLevel = new System.Windows.Forms.ComboBox();
             this.btnBack = new System.Windows.Forms.Button();
-<<<<<<< HEAD:WindowsFormsApp3/WindowsFormsApp3/AddStudent.Designer.cs
+            this.btnLoadStd = new System.Windows.Forms.Button();
+            this.txtStudID = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.DBStudNo = new System.Windows.Forms.TextBox();
-=======
->>>>>>> 03b448acc5fcb2d6ff1d5a5fc3221d8e4563f1c0:WindowsFormsApp3/AddStudent.Designer.cs
             this.SuspendLayout();
-            // 
+            //
             // label1
-            // 
+            //
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(73, 98);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "label1";
-            // 
+            //
             // label2
-            // 
+            //
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(73, 137);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 1;
             this.label2.Text = "label2";
-            // 
+            //
             // rbAddStudent
-            // 
+            //
             this.rbAddStudent.AutoSize = true;
             this.rbAddStudent.Location = new System.Drawing.Point(654, 14);
             this.rbAddStudent.Name = "rbAddStudent";
@@ -89,9 +87,9 @@
             this.rbAddStudent.Text = "Add Student";
             this.rbAddStudent.UseVisualStyleBackColor = true;
             this.rbAddStudent.CheckedChanged += new System.EventHandler(this.rbAddStudent_CheckedChanged);
-            // 
+            //
             // rbEditStudent
-            // 
+            //
             this.rbEditStudent.AutoSize = true;
             this.rbEditStudent.Location = new System.Drawing.Point(654, 37);
             this.rbEditStudent.Name = "rbEditStudent";
@@ -101,9 +99,9 @@
             this.rbEditStudent.Text = "Edit Student";
             this.rbEditStudent.UseVisualStyleBackColor = true;
             this.rbEditStudent.CheckedChanged += new System.EventHandler(this.rbEditStudent_CheckedChanged);
-            // 
+            //
             // rbDeleteStudent
-            // 
+            //
             this.rbDeleteStudent.AutoSize = true;
             this.rbDeleteStudent.Location = new System.Drawing.Point(654, 60);
             this.rbDeleteStudent.Name = "rbDeleteStudent";
@@ -113,315 +111,222 @@
             this.rbDeleteStudent.Text = "Delete Student";
             this.rbDeleteStudent.UseVisualStyleBackColor = true;
             this.rbDeleteStudent.CheckedChanged += new System.EventHandler(this.rbDeleteStudent_CheckedChanged);
-            // 
+            //
             // btnSubmit
-            // 
+            //
             this.btnSubmit.Location = new System.Drawing.Point(522, 329);
             this.btnSubmit.Name = "btnSubmit";
-<<<<<<< HEAD:WindowsFormsApp3/WindowsFormsApp3/AddStudent.Designer.cs
-            this.btnSubmit.Size = new System.Drawing.Size(100, 28);
-=======
             this.btnSubmit.Size = new System.Drawing.Size(75, 23);
->>>>>>> 03b448acc5fcb2d6ff1d5a5fc3221d8e4563f1c0:WindowsFormsApp3/AddStudent.Designer.cs
+
+            this.btnSubmit.Size = new System.Drawing.Size(86, 23);
             this.btnSubmit.TabIndex = 22;
             this.btnSubmit.Text = "Submit";
             this.btnSubmit.UseVisualStyleBackColor = true;
             this.btnSubmit.Click += new System.EventHandler(this.btnSubmit_Click);
-            // 
+            //
             // DBSurname
-            // 
+            //
             this.DBSurname.Location = new System.Drawing.Point(211, 130);
             this.DBSurname.Name = "DBSurname";
-<<<<<<< HEAD:WindowsFormsApp3/WindowsFormsApp3/AddStudent.Designer.cs
-            this.DBSurname.Size = new System.Drawing.Size(132, 22);
-            this.DBSurname.TabIndex = 13;
-            this.DBSurname.Text = "Surname";
-=======
             this.DBSurname.Size = new System.Drawing.Size(100, 20);
             this.DBSurname.TabIndex = 13;
->>>>>>> 03b448acc5fcb2d6ff1d5a5fc3221d8e4563f1c0:WindowsFormsApp3/AddStudent.Designer.cs
-            // 
+            //
             // DBFirstName
-            // 
+            //
             this.DBFirstName.Location = new System.Drawing.Point(211, 91);
             this.DBFirstName.Name = "DBFirstName";
-<<<<<<< HEAD:WindowsFormsApp3/WindowsFormsApp3/AddStudent.Designer.cs
-            this.DBFirstName.Size = new System.Drawing.Size(132, 22);
-            this.DBFirstName.TabIndex = 12;
-            this.DBFirstName.Text = "First Name";
-=======
             this.DBFirstName.Size = new System.Drawing.Size(100, 20);
             this.DBFirstName.TabIndex = 12;
->>>>>>> 03b448acc5fcb2d6ff1d5a5fc3221d8e4563f1c0:WindowsFormsApp3/AddStudent.Designer.cs
-            // 
+            //
             // label3
-            // 
+            //
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(73, 175);
             this.label3.Name = "label3";
-<<<<<<< HEAD:WindowsFormsApp3/WindowsFormsApp3/AddStudent.Designer.cs
-            this.label3.Size = new System.Drawing.Size(46, 17);
-=======
             this.label3.Size = new System.Drawing.Size(35, 13);
->>>>>>> 03b448acc5fcb2d6ff1d5a5fc3221d8e4563f1c0:WindowsFormsApp3/AddStudent.Designer.cs
             this.label3.TabIndex = 3;
             this.label3.Text = "label3";
-            // 
+            //
             // label4
-            // 
+            //
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(73, 214);
             this.label4.Name = "label4";
-<<<<<<< HEAD:WindowsFormsApp3/WindowsFormsApp3/AddStudent.Designer.cs
-            this.label4.Size = new System.Drawing.Size(46, 17);
-=======
             this.label4.Size = new System.Drawing.Size(35, 13);
->>>>>>> 03b448acc5fcb2d6ff1d5a5fc3221d8e4563f1c0:WindowsFormsApp3/AddStudent.Designer.cs
             this.label4.TabIndex = 4;
             this.label4.Text = "label4";
-            // 
+            //
             // label5
-            // 
+            //
             this.label5.AutoSize = true;
             this.label5.Location = new System.Drawing.Point(73, 247);
             this.label5.Name = "label5";
-<<<<<<< HEAD:WindowsFormsApp3/WindowsFormsApp3/AddStudent.Designer.cs
-            this.label5.Size = new System.Drawing.Size(46, 17);
-=======
             this.label5.Size = new System.Drawing.Size(35, 13);
->>>>>>> 03b448acc5fcb2d6ff1d5a5fc3221d8e4563f1c0:WindowsFormsApp3/AddStudent.Designer.cs
             this.label5.TabIndex = 5;
             this.label5.Text = "label5";
-            // 
+            //
             // label6
-            // 
+            //
             this.label6.AutoSize = true;
             this.label6.Location = new System.Drawing.Point(73, 286);
             this.label6.Name = "label6";
-<<<<<<< HEAD:WindowsFormsApp3/WindowsFormsApp3/AddStudent.Designer.cs
-            this.label6.Size = new System.Drawing.Size(46, 17);
-=======
             this.label6.Size = new System.Drawing.Size(35, 13);
->>>>>>> 03b448acc5fcb2d6ff1d5a5fc3221d8e4563f1c0:WindowsFormsApp3/AddStudent.Designer.cs
             this.label6.TabIndex = 6;
             this.label6.Text = "label6";
-            // 
+            //
             // label7
-            // 
+            //
             this.label7.AutoSize = true;
             this.label7.Location = new System.Drawing.Point(359, 97);
             this.label7.Name = "label7";
-<<<<<<< HEAD:WindowsFormsApp3/WindowsFormsApp3/AddStudent.Designer.cs
-            this.label7.Size = new System.Drawing.Size(46, 17);
-=======
             this.label7.Size = new System.Drawing.Size(35, 13);
->>>>>>> 03b448acc5fcb2d6ff1d5a5fc3221d8e4563f1c0:WindowsFormsApp3/AddStudent.Designer.cs
             this.label7.TabIndex = 7;
             this.label7.Text = "label7";
-            // 
+            //
             // label8
-            // 
+            //
             this.label8.AutoSize = true;
             this.label8.Location = new System.Drawing.Point(359, 136);
             this.label8.Name = "label8";
-<<<<<<< HEAD:WindowsFormsApp3/WindowsFormsApp3/AddStudent.Designer.cs
-            this.label8.Size = new System.Drawing.Size(46, 17);
-=======
             this.label8.Size = new System.Drawing.Size(35, 13);
->>>>>>> 03b448acc5fcb2d6ff1d5a5fc3221d8e4563f1c0:WindowsFormsApp3/AddStudent.Designer.cs
             this.label8.TabIndex = 8;
             this.label8.Text = "label8";
-            // 
+            //
             // label9
-            // 
+            //
             this.label9.AutoSize = true;
             this.label9.Location = new System.Drawing.Point(359, 178);
             this.label9.Name = "label9";
-<<<<<<< HEAD:WindowsFormsApp3/WindowsFormsApp3/AddStudent.Designer.cs
-            this.label9.Size = new System.Drawing.Size(46, 17);
-=======
             this.label9.Size = new System.Drawing.Size(35, 13);
->>>>>>> 03b448acc5fcb2d6ff1d5a5fc3221d8e4563f1c0:WindowsFormsApp3/AddStudent.Designer.cs
             this.label9.TabIndex = 9;
             this.label9.Text = "label9";
-            // 
+            //
             // label10
-            // 
+            //
             this.label10.AutoSize = true;
             this.label10.Location = new System.Drawing.Point(359, 217);
             this.label10.Name = "label10";
-<<<<<<< HEAD:WindowsFormsApp3/WindowsFormsApp3/AddStudent.Designer.cs
-            this.label10.Size = new System.Drawing.Size(54, 17);
-=======
             this.label10.Size = new System.Drawing.Size(41, 13);
->>>>>>> 03b448acc5fcb2d6ff1d5a5fc3221d8e4563f1c0:WindowsFormsApp3/AddStudent.Designer.cs
             this.label10.TabIndex = 10;
             this.label10.Text = "label10";
-            // 
+            //
             // DBEmail
-            // 
+            //
             this.DBEmail.Location = new System.Drawing.Point(211, 168);
             this.DBEmail.Name = "DBEmail";
-<<<<<<< HEAD:WindowsFormsApp3/WindowsFormsApp3/AddStudent.Designer.cs
-            this.DBEmail.Size = new System.Drawing.Size(132, 22);
-            this.DBEmail.TabIndex = 14;
-            this.DBEmail.Text = "Email";
-=======
             this.DBEmail.Size = new System.Drawing.Size(100, 20);
             this.DBEmail.TabIndex = 14;
->>>>>>> 03b448acc5fcb2d6ff1d5a5fc3221d8e4563f1c0:WindowsFormsApp3/AddStudent.Designer.cs
-            // 
+            //
             // DBPhone
-            // 
+            //
             this.DBPhone.Location = new System.Drawing.Point(211, 207);
             this.DBPhone.Name = "DBPhone";
-<<<<<<< HEAD:WindowsFormsApp3/WindowsFormsApp3/AddStudent.Designer.cs
-            this.DBPhone.Size = new System.Drawing.Size(132, 22);
-            this.DBPhone.TabIndex = 15;
-            this.DBPhone.Text = "Phone";
-=======
             this.DBPhone.Size = new System.Drawing.Size(100, 20);
             this.DBPhone.TabIndex = 15;
->>>>>>> 03b448acc5fcb2d6ff1d5a5fc3221d8e4563f1c0:WindowsFormsApp3/AddStudent.Designer.cs
-            // 
+            //
             // DBAddress1
-            // 
+            //
             this.DBAddress1.Location = new System.Drawing.Point(211, 240);
             this.DBAddress1.Name = "DBAddress1";
-<<<<<<< HEAD:WindowsFormsApp3/WindowsFormsApp3/AddStudent.Designer.cs
-            this.DBAddress1.Size = new System.Drawing.Size(132, 22);
-            this.DBAddress1.TabIndex = 16;
-            this.DBAddress1.Text = "Address Line 1";
-=======
             this.DBAddress1.Size = new System.Drawing.Size(100, 20);
             this.DBAddress1.TabIndex = 16;
->>>>>>> 03b448acc5fcb2d6ff1d5a5fc3221d8e4563f1c0:WindowsFormsApp3/AddStudent.Designer.cs
-            // 
+            //
             // DBAddress2
-            // 
+            //
             this.DBAddress2.Location = new System.Drawing.Point(211, 279);
             this.DBAddress2.Name = "DBAddress2";
-<<<<<<< HEAD:WindowsFormsApp3/WindowsFormsApp3/AddStudent.Designer.cs
-            this.DBAddress2.Size = new System.Drawing.Size(132, 22);
-            this.DBAddress2.TabIndex = 17;
-            this.DBAddress2.Text = "Address Line 2";
-=======
             this.DBAddress2.Size = new System.Drawing.Size(100, 20);
             this.DBAddress2.TabIndex = 17;
->>>>>>> 03b448acc5fcb2d6ff1d5a5fc3221d8e4563f1c0:WindowsFormsApp3/AddStudent.Designer.cs
-            // 
+            //
             // DBCity
-            // 
+            //
             this.DBCity.Location = new System.Drawing.Point(497, 90);
             this.DBCity.Name = "DBCity";
-<<<<<<< HEAD:WindowsFormsApp3/WindowsFormsApp3/AddStudent.Designer.cs
-            this.DBCity.Size = new System.Drawing.Size(132, 22);
-            this.DBCity.TabIndex = 18;
-            this.DBCity.Text = "City";
-=======
             this.DBCity.Size = new System.Drawing.Size(100, 20);
             this.DBCity.TabIndex = 18;
->>>>>>> 03b448acc5fcb2d6ff1d5a5fc3221d8e4563f1c0:WindowsFormsApp3/AddStudent.Designer.cs
-            // 
+            //
             // DBCounty
-            // 
+            //
             this.DBCounty.Location = new System.Drawing.Point(497, 129);
             this.DBCounty.Name = "DBCounty";
-<<<<<<< HEAD:WindowsFormsApp3/WindowsFormsApp3/AddStudent.Designer.cs
-            this.DBCounty.Size = new System.Drawing.Size(132, 22);
-            this.DBCounty.TabIndex = 19;
-            this.DBCounty.Text = "County";
-=======
             this.DBCounty.Size = new System.Drawing.Size(100, 20);
             this.DBCounty.TabIndex = 19;
->>>>>>> 03b448acc5fcb2d6ff1d5a5fc3221d8e4563f1c0:WindowsFormsApp3/AddStudent.Designer.cs
-            // 
+            //
             // DBCourse
-            // 
+            //
             this.DBCourse.Location = new System.Drawing.Point(497, 210);
             this.DBCourse.Name = "DBCourse";
-<<<<<<< HEAD:WindowsFormsApp3/WindowsFormsApp3/AddStudent.Designer.cs
-            this.DBCourse.Size = new System.Drawing.Size(132, 22);
-            this.DBCourse.TabIndex = 21;
-            this.DBCourse.Text = "Course";
-=======
             this.DBCourse.Size = new System.Drawing.Size(100, 20);
             this.DBCourse.TabIndex = 21;
->>>>>>> 03b448acc5fcb2d6ff1d5a5fc3221d8e4563f1c0:WindowsFormsApp3/AddStudent.Designer.cs
-            // 
+            //
             // comboxLevel
-            // 
+            //
             this.comboxLevel.FormattingEnabled = true;
             this.comboxLevel.Items.AddRange(new object[] {
             "6",
             "7",
             "8"});
-<<<<<<< HEAD:WindowsFormsApp3/WindowsFormsApp3/AddStudent.Designer.cs
-            this.comboxLevel.Location = new System.Drawing.Point(663, 207);
-            this.comboxLevel.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.comboxLevel.Name = "comboxLevel";
-            this.comboxLevel.Size = new System.Drawing.Size(132, 24);
-=======
             this.comboxLevel.Location = new System.Drawing.Point(497, 168);
             this.comboxLevel.Name = "comboxLevel";
             this.comboxLevel.Size = new System.Drawing.Size(100, 21);
->>>>>>> 03b448acc5fcb2d6ff1d5a5fc3221d8e4563f1c0:WindowsFormsApp3/AddStudent.Designer.cs
             this.comboxLevel.TabIndex = 20;
-            // 
+            //
             // btnBack
-            // 
-<<<<<<< HEAD:WindowsFormsApp3/WindowsFormsApp3/AddStudent.Designer.cs
-            this.btnBack.Location = new System.Drawing.Point(59, 17);
-            this.btnBack.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(100, 28);
-=======
+            //
             this.btnBack.Location = new System.Drawing.Point(44, 14);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(75, 23);
->>>>>>> 03b448acc5fcb2d6ff1d5a5fc3221d8e4563f1c0:WindowsFormsApp3/AddStudent.Designer.cs
             this.btnBack.TabIndex = 25;
             this.btnBack.Text = "< Back";
             this.btnBack.UseVisualStyleBackColor = true;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-<<<<<<< HEAD:WindowsFormsApp3/WindowsFormsApp3/AddStudent.Designer.cs
-            // 
-            // label11
-            // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(479, 313);
-            this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(54, 17);
-            this.label11.TabIndex = 11;
-            this.label11.Text = "label11";
-=======
->>>>>>> 03b448acc5fcb2d6ff1d5a5fc3221d8e4563f1c0:WindowsFormsApp3/AddStudent.Designer.cs
-            // 
+            //
             // DBStudNo
-            // 
+            //
             this.DBStudNo.Location = new System.Drawing.Point(663, 304);
             this.DBStudNo.Margin = new System.Windows.Forms.Padding(4);
             this.DBStudNo.Name = "DBStudNo";
             this.DBStudNo.Size = new System.Drawing.Size(132, 22);
             this.DBStudNo.TabIndex = 24;
             this.DBStudNo.Text = "Student No.";
-            // 
+            //
+            // btnLoadStd
+            //
+            this.btnLoadStd.Location = new System.Drawing.Point(522, 284);
+            this.btnLoadStd.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLoadStd.Name = "btnLoadStd";
+            this.btnLoadStd.Size = new System.Drawing.Size(86, 26);
+            this.btnLoadStd.TabIndex = 26;
+            this.btnLoadStd.Text = "Load Student";
+            this.btnLoadStd.UseVisualStyleBackColor = true;
+            this.btnLoadStd.Click += new System.EventHandler(this.btnLoadStd_Click);
+            //
+            // txtStudID
+            //
+            this.txtStudID.Location = new System.Drawing.Point(211, 59);
+            this.txtStudID.Name = "txtStudID";
+            this.txtStudID.Size = new System.Drawing.Size(100, 20);
+            this.txtStudID.TabIndex = 27;
+            //
+            // label11
+            //
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(73, 59);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(41, 13);
+            this.label11.TabIndex = 28;
+            this.label11.Text = "label11";
+            //
             // AddStudent
-            // 
+            //
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-<<<<<<< HEAD:WindowsFormsApp3/WindowsFormsApp3/AddStudent.Designer.cs
-            this.ClientSize = new System.Drawing.Size(1067, 554);
-            this.Controls.Add(this.btnBack);
-            this.Controls.Add(this.comboxLevel);
-            this.Controls.Add(this.DBStudNo);
-            this.Controls.Add(this.label11);
-=======
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.txtStudID);
+            this.Controls.Add(this.btnLoadStd);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.comboxLevel);
->>>>>>> 03b448acc5fcb2d6ff1d5a5fc3221d8e4563f1c0:WindowsFormsApp3/AddStudent.Designer.cs
             this.Controls.Add(this.DBCourse);
             this.Controls.Add(this.DBCity);
             this.Controls.Add(this.DBCounty);
@@ -461,8 +366,6 @@
         private System.Windows.Forms.RadioButton rbEditStudent;
         private System.Windows.Forms.RadioButton rbDeleteStudent;
         private System.Windows.Forms.Button btnSubmit;
-        private System.Windows.Forms.TextBox DBSurname;
-        private System.Windows.Forms.TextBox DBFirstName;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
@@ -471,19 +374,20 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.TextBox DBEmail;
-        private System.Windows.Forms.TextBox DBPhone;
-        private System.Windows.Forms.TextBox DBAddress1;
-        private System.Windows.Forms.TextBox DBAddress2;
-        private System.Windows.Forms.TextBox DBCity;
-        private System.Windows.Forms.TextBox DBCounty;
-        private System.Windows.Forms.TextBox DBCourse;
-        private System.Windows.Forms.ComboBox comboxLevel;
         private System.Windows.Forms.Button btnBack;
-<<<<<<< HEAD:WindowsFormsApp3/WindowsFormsApp3/AddStudent.Designer.cs
+
+        private System.Windows.Forms.Button btnLoadStd;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox DBStudNo;
-=======
->>>>>>> 03b448acc5fcb2d6ff1d5a5fc3221d8e4563f1c0:WindowsFormsApp3/AddStudent.Designer.cs
+        public System.Windows.Forms.TextBox DBFirstName;
+        public System.Windows.Forms.TextBox DBSurname;
+        public System.Windows.Forms.TextBox DBEmail;
+        public System.Windows.Forms.TextBox DBPhone;
+        public System.Windows.Forms.TextBox DBAddress1;
+        public System.Windows.Forms.TextBox DBAddress2;
+        public System.Windows.Forms.TextBox DBCity;
+        public System.Windows.Forms.TextBox DBCounty;
+        public System.Windows.Forms.TextBox DBCourse;
+        public System.Windows.Forms.ComboBox comboxLevel;
+        public System.Windows.Forms.TextBox txtStudID;
     }
 }
