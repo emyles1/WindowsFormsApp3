@@ -17,10 +17,10 @@ namespace WindowsFormsApp3
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new btnCreateAdminDB());
-            Application.Run(new Login());
+            //Application.Run(new Login());
             //Application.Run(new Game());
-            Application.Run(new AddStudent());
-            //Application.Run(new StudXML());
+            //Application.Run(new AddStudent());
+            Application.Run(new StudXML());
 
 
 

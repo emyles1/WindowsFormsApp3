@@ -29,20 +29,45 @@ namespace WindowsFormsApp3
 
         private void btnLoad_Click(object sender, EventArgs e)
         {
+            /* if (ds == null)
+             {
+                 ds = new DataSet();
+             }
+             if (txtFN.Text == "")
+             {
+                 //txtFN.Text = "Games.xml";
+                 txtFN.Text = "Student.xml";
+             }
+             string fileN = txtFN.Text;
+             ds.ReadXml(fileN, XmlReadMode.InferSchema);
+             //if (!ds.Tables.Contains("Game")) throw new Exception();
+             if (!ds.Tables.Contains("Student")) throw new Exception();*/
 
-            if (ds == null)
+            string ID = txtID.Text;
+
+            conn.Open();
+            SqlCommand cmd = new SqlCommand("Select * from Student where id=@ID", conn);
+            cmd.Parameters.AddWithValue("@ID", ID);
+            using (SqlDataReader reader = cmd.ExecuteReader())
             {
-                ds = new DataSet();
+                if (reader.Read())
+                {
+
+                    DBFirstName.Text = reader["FirstName"].ToString();
+                    DBSurname.Text = reader["Surname"].ToString();
+                    DBEmail.Text = reader["Email"].ToString();
+                    DBPhone.Text = reader["Phone"].ToString();
+                    DBAddress1.Text = reader["AddressL1"].ToString();
+                    DBAddress2.Text = reader["AddressL2"].ToString();
+                    DBCity.Text = reader["City"].ToString();
+                    DBCounty.Text = reader["County"].ToString();
+                    comboxLevel.Text = reader["level"].ToString();
+                    DBCourse.Text = reader["Course"].ToString();
+
+                    //MessageBox.Show("test" + reader["FirstName"]);
+                }
             }
-            if (txtFN.Text == "")
-            {
-                //txtFN.Text = "Games.xml";
-                txtFN.Text = "Student.xml";
-            }
-            string fileN = txtFN.Text;
-            ds.ReadXml(fileN, XmlReadMode.InferSchema);
-            //if (!ds.Tables.Contains("Game")) throw new Exception();
-            if (!ds.Tables.Contains("Student")) throw new Exception();
+            conn.Close();
 
         }
 
