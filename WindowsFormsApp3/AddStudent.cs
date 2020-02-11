@@ -10,12 +10,15 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+/*event handler for checking textboxes
+ https://docs.microsoft.com/en-us/dotnet/api/system.windows.forms.textboxbase.clear?view=netframework-4.8https:
+    */
 namespace WindowsFormsApp3
 {
     public partial class AddStudent : Form
     {
         SqlConnection conn;
-        Labels labelradio = new Labels();
+        Clear cleartxt = new Clear();
         public AddStudent()
         {
             InitializeComponent();
@@ -33,15 +36,11 @@ namespace WindowsFormsApp3
         {
             labelValue(2);
 
-   
-
-          
         }
         private void rbEditStudent_CheckedChanged(object sender, EventArgs e)
         {
 
              labelValue(1);
-         
        
         }
 
@@ -85,6 +84,11 @@ namespace WindowsFormsApp3
                 {
                     conn.Close();
                 }
+
+                //clear();
+                //DBFirstName.Clear();
+                cleartxt.ClearTxt();
+
             }
             else if(rbEditStudent.Checked)
             {
@@ -120,6 +124,8 @@ namespace WindowsFormsApp3
                 {
                     conn.Close();
                 }
+
+                cleartxt.ClearTxt();
             }
 
             else if(rbDeleteStudent.Checked)
@@ -143,6 +149,7 @@ namespace WindowsFormsApp3
                 }
 
                 clear();
+               // cleartxt.ClearTxt();
             }
 
 
@@ -213,7 +220,6 @@ namespace WindowsFormsApp3
             DBCounty.Clear();
             DBCourse.Clear();
             txtStudID.Clear();
-
         }
 
 
