@@ -31,51 +31,25 @@ namespace WindowsFormsApp3
 
         private void rbAddStudent_CheckedChanged(object sender, EventArgs e)
         {
-            
+            labelValue(2);
 
-                        label1.Text = "Add First Name";
-                        label2.Text = "Add Surname";
-                        label3.Text = "Add Email";
-                        label4.Text = "Add Phone";
-                        label5.Text = "Add Address Line 1";
-                        label6.Text = "Add Address Line 2";
-                        label7.Text = "Add City";
-                        label8.Text = "Add County";
-                        label9.Text = "Add Level";
-                        label10.Text = "Add Course";
+   
 
           
         }
         private void rbEditStudent_CheckedChanged(object sender, EventArgs e)
         {
-            label1.Text = "Edit First Name";
-            label2.Text = "Edit Surname";
-            label3.Text = "Edit Email";
-            label4.Text = "Edit Phone";
-            label5.Text = "Edit Address Line 1";
-            label6.Text = "Edit Address Line 2";
-            label7.Text = "Edit City";
-            label8.Text = "Edit County";
-            label9.Text = "Edit Level";
-            label10.Text = "Edit Course";
 
-            labelradio = new Labels("Eamon", "Surname", "Email", "Phone", "123 Fakestreet");
-            MessageBox.Show(labelradio.Firstname);
+             labelValue(1);
+         
+       
         }
 
         private void rbDeleteStudent_CheckedChanged(object sender, EventArgs e)
         {
-            label1.Text = "Delete First Name";
-            label2.Text = "Delete Surname";
-            label3.Text = "Delete Email";
-            label4.Text = "Delete Phone";
-            label5.Text = "Delete Address Line 1";
-            label6.Text = "Delete Address Line 2";
-            label7.Text = "Delete City";
-            label8.Text = "Delete County";
-            label9.Text = "Delete Level";
-            label10.Text = "Delete Course";
-        
+
+            labelValue(3);
+         
         }
 
         private void btnSubmit_Click(object sender, EventArgs e)
@@ -114,6 +88,113 @@ namespace WindowsFormsApp3
         private void btnBack_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        public void labelValue(int value)
+        {
+
+            //better to user a switch statment here
+            if (value == 1)
+            {
+
+                txtStudID.Visible = true;
+                btnLoadStd.Visible = true;
+                label11.Visible = true;
+
+                label1.Text = "Edit First Name";
+                label2.Text = "Edit Surname";
+                label3.Text = "Edit Email";
+                label4.Text = "Edit Phone";
+                label5.Text = "Edit Address Line 1";
+                label6.Text = "Edit Address Line 2";
+                label7.Text = "Edit City";
+                label8.Text = "Edit County";
+                label9.Text = "Edit Level";
+                label10.Text = "Edit Course";
+                label11.Text = "Load Student ID";
+
+                DBAddress1.Enabled = false;
+                DBFirstName.Enabled = false;
+                DBSurname.Enabled = false;
+                DBEmail.Enabled = false;
+                DBPhone.Enabled = false;
+                DBAddress2.Enabled = false;
+                DBCity.Enabled = false;
+                DBCounty.Enabled = false;
+                DBCourse.Enabled = false;
+                comboxLevel.Enabled = false;
+            }
+
+            else if (value == 2)
+            {
+                label11.Visible = false;
+                txtStudID.Visible = false;
+                btnLoadStd.Visible = false;
+
+                label1.Text = "Add First Name";
+                label2.Text = "Add Surname";
+                label3.Text = "Add Email";
+                label4.Text = "Add Phone";
+                label5.Text = "Add Address Line 1";
+                label6.Text = "Add Address Line 2";
+                label7.Text = "Add City";
+                label8.Text = "Add County";
+                label9.Text = "Add Level";
+                label10.Text = "Add Course";
+            
+
+                DBAddress1.Enabled = true;
+                DBFirstName.Enabled = true;
+                DBSurname.Enabled = true;
+                DBEmail.Enabled = true;
+                DBPhone.Enabled = true;
+                DBAddress2.Enabled = true;
+                DBCity.Enabled = true;
+                DBCounty.Enabled = true;
+                DBCourse.Enabled = true;
+                comboxLevel.Enabled = true;
+            }
+
+            else if (value == 3)
+                    {
+                txtStudID.Visible = true;
+                btnLoadStd.Visible = true;
+                label11.Visible = true;
+
+                label1.Text = "Edit First Name";
+                label2.Text = "Edit Surname";
+                label3.Text = "Edit Email";
+                label4.Text = "Edit Phone";
+                label5.Text = "Edit Address Line 1";
+                label6.Text = "Edit Address Line 2";
+                label7.Text = "Edit City";
+                label8.Text = "Edit County";
+                label9.Text = "Edit Level";
+                label10.Text = "Edit Course";
+                label11.Text = "Load Student ID";
+
+                DBAddress1.Enabled = false;
+                DBFirstName.Enabled = false;
+                DBSurname.Enabled = false;
+                DBEmail.Enabled = false;
+                DBPhone.Enabled = false;
+                DBAddress2.Enabled = false;
+                DBCity.Enabled = false;
+                DBCounty.Enabled = false;
+                DBCourse.Enabled = false;
+                comboxLevel.Enabled = false;
+            }
+                    
+                
+
+           
+
+
+        }
+
+        private void btnLoadStd_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

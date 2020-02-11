@@ -38,7 +38,7 @@ namespace WindowsFormsApp3
         {
            
             string username = txtUName.Text;
-            //string password = txtPass.Text;
+            string password = txtPass.Text;
 
             try
             {
@@ -55,7 +55,7 @@ namespace WindowsFormsApp3
                 cmd.CommandText = "SELECT Password FROM Admin where Username = '"+ username +"'";
                 cmd.Connection = conn;
                 rdr = (string)cmd.ExecuteScalar();
-                MessageBox.Show("Name: " + rdr);
+               // MessageBox.Show("Pass: " + rdr);
 
             }
             catch (Exception ex)
@@ -68,7 +68,8 @@ namespace WindowsFormsApp3
                 conn.Close();
             }
 
-            if ((this.txtUName.Text == "Admin") && (rdr == "Admin"))
+
+            if (rdr == txtPass.Text)
             {
                 
                 groupBox1.Visible = true;
